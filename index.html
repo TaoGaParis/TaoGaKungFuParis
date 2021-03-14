@@ -112,20 +112,26 @@
 
                 <v-divider></v-divider>
               </v-responsive>
+              <v-avatar
+                class="elevation-12 mb-12"
+                size="128"
+                >
+                <v-img src="leslie.jpg"></v-img>
+              </v-avatar>
 
               <v-responsive
                 class="mx-auto title font-weight-light mb-8"
                 max-width="720"
                 >
-                Vuetify is the #1 component library for Vue.js and has been in active development since 2016. The goal of the project is to provide users with everything that is needed to build rich and engaging web applications using the Material Design specification. It accomplishes that with a consistent update cycle, Long-term Support (LTS) for previous versions, responsive community engagement, a vast ecosystem of resources and a dedication to quality components.
+                Le kung-fu "Tao GA" est une variante de la discipline "Sil Lum Fut GA Kuen" enseigné par la Gee Yung Chinese Physical Culture Association à Hawaii. 
+                <br>
+                Son fondateur et Grand Maître, Lum Tai Yung, a enseigné cette variante à mon professeur, maître Andrew Lum, de l'Académie des Arts Martiaux Chinois d'Hawaï.
+                Leslie Mow est originaire d'Hawaii. Il a appris aupres de Andrew Lum pendant plus de 30 ans
+                <br>
+                <br>
+                Le système de Tao ga du Kung Fu est basé sur la vitesse d'attaque et de contrôle. La vitesse est obtenue par une combinaison de coups de poing, coups de pied et d'agilité des pieds. La capacité à contrôler l'adversaire est un autre élément de Tao ga. Le contrôle permet d'anticiper l'attaque de l'adversaire ou de contre-attaquer. Le contrôle prend de nombreuses formes. Bloquer une attaque donne à l'adversaire une zone étroite pour poursuivre son attaque. Savoir d'où proviendra l'attaque suivante permet une contre-attaque ailleurs. Frapper l'adversaire le contraint à réagir, tourner, se baisser d'une certaine manière ou dans une certaine direction ce qui nous permet de poursuivre l'attaque.
               </v-responsive>
 
-                <v-avatar
-                  class="elevation-12 mb-12"
-                  size="128"
-                  >
-                  <v-img src="leslie.jpg"></v-img>
-                </v-avatar>
 
                 <div></div>
 
@@ -135,8 +141,8 @@
                   outlined
                   large
                   >
-                  <span class="grey--text text--darken-1 font-weight-bold">
-                    Facebook Group Link
+                  <span id="joinUs" class="grey--text text--darken-1 font-weight-bold">
+                    Rejoins le groupe Facebook 
                   </span>
                 </v-btn>
             </v-container>
@@ -156,17 +162,28 @@
             <div class="py-12"></div>
 
             <v-container>
+              <v-responsive
+                class="mx-auto mb-12"
+                width="56"
+                >
+                <v-btn
+                  class="align-self-end"
+                  fab
+                  outlined
+                  @click="$vuetify.goTo('#joinUs')"
+                  >
+                  <br>
+                  <v-icon>mdi-chevron-double-up</v-icon>
+                </v-btn>
+              </v-responsive>
+
               <h2 class="display-2 font-weight-bold mb-3 text-uppercase text-center">Join US</h2>
 
               <v-responsive
                 class="mx-auto mb-12"
                 width="56"
                 >
-                <v-divider class="mb-1"></v-divider>
-
-                <v-divider></v-divider>
               </v-responsive>
-
             </v-container>
 
             <div class="py-12"></div>
