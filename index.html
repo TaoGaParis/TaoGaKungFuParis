@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html prefix="og: https://ogp.me/ns#">
   <head>
     <title>Kung Fu - Tao Ga Paris</title>
     <meta charset="utf-8">
@@ -8,6 +8,18 @@
     <link href="https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
     <link rel="shortcut icon" href="./logo.ico">  
+    <meta name="description" content="Leslie Mow propose des cours d'art martiaux chinois dans le centre de Paris. Pratique le Kung-Fu Tao Ga. Suivez le groupe Facebook pour s'informer des cours">
+    <meta name="robots" content="index">
+
+    <meta property="og:title" content="Tao Ga Kung-Fu Paris" />
+    <meta property="og:type" content="video.movie" />
+    <meta property="og:image" content="armel_leslie.jpg" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="400" />
+    <meta property="og:image:height" content="300" />
+    <meta property="og:image:alt" content="Deux pratiquant de Tao Ga" />
+    <meta property="og:description" content="Groupe de pratique Kung Fu, art martial chinois, Tao Ga." />
+    <meta property="og:locale" content="en_FR" />
   </head>
   <body>
     <div id="app">
@@ -33,17 +45,17 @@
                      <v-toolbar-title class="font-weight-black headline d-none d-sm-block" >
                        Kung Fu Paris - Tao Ga
                      </v-toolbar-title>
-          <v-spacer></v-spacer>
-          <v-btn
-            color="grey"
-            href="about.html"
-            outlined
-            large
-            >
-            <span class="grey--text text--darken-1 font-weight-bold">
-              About
-            </span>
-          </v-btn>
+                       <v-spacer></v-spacer>
+                       <v-btn
+                         color="grey"
+                         href="about.html"
+                         outlined
+                         large
+                         >
+                         <span class="grey--text text--darken-1 font-weight-bold">
+                           About
+                         </span>
+                       </v-btn>
         </v-app-bar>
 
         <v-content>
@@ -53,6 +65,7 @@
                 :min-height="'calc(100vh - ' + $vuetify.application.top + 'px)'"
                 src="armel_leslie.jpg"
                 srcset="leslie_size_portable.jpg 1000w,armel_leslie.jpg 2000w"
+                alt="leslie et armel qui posent"
                 >
                 <v-theme-provider dark>
                   <v-container fill-height>
@@ -117,7 +130,7 @@
                 class="elevation-12 mb-12"
                 size="128"
                 >
-                <v-img src="leslie.jpg"></v-img>
+                <v-img src="leslie.jpg" alt="leslie photo"></v-img>
               </v-avatar>
 
               <v-responsive
@@ -131,21 +144,27 @@
                 <br>
                 <br>
                 Le système de Tao ga du Kung Fu est basé sur la vitesse d'attaque et de contrôle. La vitesse est obtenue par une combinaison de coups de poing, coups de pied et d'agilité des pieds. La capacité à contrôler l'adversaire est un autre élément de Tao ga. Le contrôle permet d'anticiper l'attaque de l'adversaire ou de contre-attaquer. Le contrôle prend de nombreuses formes. Bloquer une attaque donne à l'adversaire une zone étroite pour poursuivre son attaque. Savoir d'où proviendra l'attaque suivante permet une contre-attaque ailleurs. Frapper l'adversaire le contraint à réagir, tourner, se baisser d'une certaine manière ou dans une certaine direction ce qui nous permet de poursuivre l'attaque.
+                <br>
+                <br>
+                <b>Les cours ont lieux au Jardin du Luxembourg dans le centre de Paris. 
+                  <br>
+                  Suivez le groupe Facebook pour connaitre l'horaire des prochains cours</b>
               </v-responsive>
 
 
-                <div></div>
+              <div></div>
 
-                <v-btn
-                  color="grey"
-                  href="https://www.facebook.com/groups/TaoGa"
-                  outlined
-                  large
-                  >
-                  <span id="joinUs" class="grey--text text--darken-1 font-weight-bold">
-                    Rejoins le groupe Facebook 
-                  </span>
-                </v-btn>
+              <v-btn
+                color="grey"
+                href="https://www.facebook.com/groups/TaoGa"
+                rel="nofollow"
+                outlined
+                large
+                >
+                <span id="joinUs" class="grey--text text--darken-1 font-weight-bold">
+                  Rejoins le groupe Facebook 
+                </span>
+              </v-btn>
             </v-container>
 
             <div class="py-12"></div>
