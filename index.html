@@ -49,13 +49,11 @@
 
                        <v-btn
                          class="ma-2"
-                         :color="language != 'FR' ? 'black' : 'grey'"
                          @click="language = 'FR'"
-                         dark
+                         :light="language == 'FR'" 
                          >
                          FR
                          <v-icon
-                           dark
                            right
                            >
                            🇫🇷
@@ -64,13 +62,11 @@
 
                          <v-btn
                            class="ma-2"
-                           dark
-                           :color="language != 'EN' ? 'black' : 'grey'"
                            @click="language = 'EN'"
+                           :light="language != 'FR'" 
                            >
                            EN
                            <v-icon
-                             dark
                              right
                              >
                              🇬🇧 
@@ -275,8 +271,11 @@
      <br>
      Follow the Facebook Group to aknowledge when the next course will take place</b>`
                             }
+                    },
+              methods: {
                     }
-            })
+            }
+            )
     </script>
   </body>
 </html>
