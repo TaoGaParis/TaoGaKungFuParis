@@ -49,7 +49,7 @@
 
                        <v-btn
                          class="ma-2"
-                         :color="language == 'FR' ? 'black' : 'grey'"
+                         :color="language != 'FR' ? 'black' : 'grey'"
                          @click="language = 'FR'"
                          dark
                          >
@@ -65,7 +65,7 @@
                          <v-btn
                            class="ma-2"
                            dark
-                           :color="language == 'EN' ? 'black' : 'grey'"
+                           :color="language != 'EN' ? 'black' : 'grey'"
                            @click="language = 'EN'"
                            >
                            EN
@@ -114,16 +114,16 @@
                           :class="[$vuetify.breakpoint.smAndDown ? 'display-1' : 'display-2']"
                           class="font-weight-light"
                           >
-                          JOIN US
+                          {{language == 'FR' ? "REJOINS NOUS": "JOINS US"}}
                         </span>
 
                           <br>
 
                           <span
-                            :class="[$vuetify.breakpoint.smAndDown ? 'display-3': 'display-4']"
+                            :class="[$vuetify.breakpoint.smAndDown ? 'display-2': 'display-3']"
                             class="font-weight-black"
                             >
-                            REJOINS NOUS
+                            TAO GA KUNG FU
                           </span>
 
                       </v-col>
@@ -147,7 +147,7 @@
             <div class="py-12"></div>
 
             <v-container class="text-center">
-              <h2 class="display-2 font-weight-bold mb-3">ABOUT ME</h2>
+              <h2 class="display-2 font-weight-bold mb-3">{{language == 'FR' ? "A propos de Leslie Mow et du Tao Ga" : "About Leslie Mow and Tao Ga" }}</h2>
 
               <v-responsive
                 class="mx-auto mb-8"
