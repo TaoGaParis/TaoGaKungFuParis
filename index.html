@@ -49,7 +49,8 @@
 
                        <v-btn
                          class="ma-2"
-                         color="grey"
+                         :color="language == 'FR' ? 'black' : 'grey'"
+                         @click="language = 'FR'"
                          dark
                          >
                          FR
@@ -57,34 +58,35 @@
                            dark
                            right
                            >
-                            🇫🇷
-                         </v-icon>
-                       </v-btn>
-
-                       <v-btn
-                         class="ma-2"
-                         color="grey"
-                         dark
-                         >
-                         EN
-                         <v-icon
-                           dark
-                           right
-                           >
-                          🇬🇧 
+                           🇫🇷
                          </v-icon>
                        </v-btn>
 
                          <v-btn
-                           color="grey"
-                           href="about.html"
-                           outlined
-                           large
+                           class="ma-2"
+                           dark
+                           :color="language == 'EN' ? 'black' : 'grey'"
+                           @click="language = 'EN'"
                            >
-                           <span class="grey--text text--darken-1 font-weight-bold">
-                             About
-                           </span>
+                           EN
+                           <v-icon
+                             dark
+                             right
+                             >
+                             🇬🇧 
+                           </v-icon>
                          </v-btn>
+
+                           <v-btn
+                             color="grey"
+                             href="about.html"
+                             outlined
+                             large
+                             >
+                             <span class="grey--text text--darken-1 font-weight-bold">
+                               About
+                             </span>
+                           </v-btn>
         </v-app-bar>
 
         <v-content>
@@ -163,21 +165,9 @@
               </v-avatar>
 
               <v-responsive
-                class="mx-auto title font-weight-light mb-8"
+                class="mx-auto flex-column  title font-weight-light mb-8"
                 max-width="720"
-                >
-                Le kung-fu "Tao GA" est une variante de la discipline "Sil Lum Fut GA Kuen" enseigné par la Gee Yung Chinese Physical Culture Association à Hawaii. 
-                <br>
-                Son fondateur et Grand Maître, Lum Tai Yung, a enseigné cette variante à mon professeur, maître Andrew Lum, de l'Académie des Arts Martiaux Chinois d'Hawaï.
-                Leslie Mow est originaire d'Hawaii. Il a appris aupres de Andrew Lum pendant plus de 30 ans
-                <br>
-                <br>
-                Le système de Tao ga du Kung Fu est basé sur la vitesse d'attaque et de contrôle. La vitesse est obtenue par une combinaison de coups de poing, coups de pied et d'agilité des pieds. La capacité à contrôler l'adversaire est un autre élément de Tao ga. Le contrôle permet d'anticiper l'attaque de l'adversaire ou de contre-attaquer. Le contrôle prend de nombreuses formes. Bloquer une attaque donne à l'adversaire une zone étroite pour poursuivre son attaque. Savoir d'où proviendra l'attaque suivante permet une contre-attaque ailleurs. Frapper l'adversaire le contraint à réagir, tourner, se baisser d'une certaine manière ou dans une certaine direction ce qui nous permet de poursuivre l'attaque.
-                <br>
-                <br>
-                <b>Les cours ont lieux au Jardin du Luxembourg dans le centre de Paris. 
-                  <br>
-                  Suivez le groupe Facebook pour connaitre l'horaire des prochains cours</b>
+                v-html="this[language]">
               </v-responsive>
 
 
@@ -191,7 +181,7 @@
                 large
                 >
                 <span id="joinUs" class="grey--text text--darken-1 font-weight-bold">
-                  Rejoins le groupe Facebook 
+                  {{ language == 'FR' ? "Rejoins le groupe Facebook" : "Join the Facebook Group" }}
                 </span>
               </v-btn>
             </v-container>
@@ -248,6 +238,30 @@
               vuetify: new Vuetify(),
               data () {
                       return {
+                              language: "FR",
+                              FR: 
+                              `Le kung-fu "Tao GA" est une variante de la discipline "Sil Lum Fut GA Kuen" enseigné par la Gee Yung Chinese Physical Culture Association à Hawaii. 
+     Son fondateur et Grand Maître, Lum Tai Yung, a enseigné cette variante à mon professeur, maître Andrew Lum, de l'Académie des Arts Martiaux Chinois d'Hawaï.
+     Leslie Mow est originaire d'Hawaii. Il a appris aupres de Andrew Lum pendant 45 ans
+     <br>
+     Le système de Tao ga du Kung Fu est basé sur la vitesse d'attaque et de contrôle. La vitesse est obtenue par une combinaison de coups de poing, coups de pied et d'agilité des pieds. La capacité à contrôler l'adversaire est un autre élément de Tao ga. Le contrôle permet d'anticiper l'attaque de l'adversaire ou de contre-attaquer. Le contrôle prend de nombreuses formes. Bloquer une attaque donne à l'adversaire une zone étroite pour poursuivre son attaque. Savoir d'où proviendra l'attaque suivante permet une contre-attaque ailleurs. Frapper l'adversaire le contraint à réagir, tourner, se baisser d'une certaine manière ou dans une certaine direction ce qui nous permet de poursuivre l'attaque.
+     <br>
+     <b class="my-5">
+     Les cours ont lieux au Jardin du Luxembourg dans le centre de Paris. 
+     <br>
+     Suivez le groupe Facebook pour connaitre l'horaire des prochains cours
+     </b>`,
+                              EN:`
+     Tao ga kung fu is a variation of the Sil Lum Fut Ga Kuen taught by the Gee Yung Chinese Physical Culture Association in Hawaii. Their founder and grand master, Lum Tai Yung, taught this variation to my teacher, master Andrew Lum, of the Chinese Martial Arts Academy of Hawaii.
+     Leslie comes from Hawaii. He learned from sifu Andrew Lum for 45 years.
+     <br>
+     Leslie
+     The Tao ga system of kung fu is based on speed of attack and control. Speed is achieved by a combination of fists, kicks and agile feet. The ability to control the opponent is another factor of Tao ga. Control allows for anticipation of the opponents attack or counter-attack. Control comes in many forms. Blocking an attack gives the opponent a narrow area to continue the attack. Knowing where the following attack will come from allows a counter-attack somewhere else. Hitting the opponent causes the opponent to react, turn, fall in a specific manner or direction where we can continue the attack.
+     <br>
+     <b class="my-5">
+     Courses take places in Luxembourg's Gardens in Paris
+     <br>
+     Follow the Facebook Group to aknowledge when the next course will take place</b>`
                             }
                     }
             })
